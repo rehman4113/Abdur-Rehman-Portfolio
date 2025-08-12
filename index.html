@@ -1,1005 +1,437 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdur Rehman - Java Backend Developer</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- AOS Library for scroll animations -->
+    <meta name="description" content="Abdur Rehman - Java Backend Developer Portfolio">
+    <title>Abdur Rehman | Java Backend Developer</title>
+
+    <!-- Preload critical fonts -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap"
+        as="style">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-      /* CSS Variables for Consistent Theming */
-:root {
-    --bg-deep-navy: #0D1117;
-    --accent-bright-blue: #58A6FF;
-    --text-off-white: #F0F6FC;
-    --text-gray: #C9D1D9;
-    --card-bg: #161B22;
-    --border-color: #30363D;
-    --shadow-light: rgba(88, 166, 255, 0.2);
-    --shadow-dark: rgba(0, 0, 0, 0.4);
-}
 
-/* Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-html {
-    scroll-behavior: smooth;
-}
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-deep-navy);
-    color: var(--text-off-white);
-    line-height: 1.6;
-    overflow-x: hidden;
-    position: relative;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
-    color: var(--text-off-white);
-    margin-bottom: 1rem;
-}
-
-h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
-h2 { font-size: clamp(2rem, 4vw, 2.5rem); }
-h3 { font-size: clamp(1.5rem, 3vw, 1.8rem); }
-
-p {
-    font-size: clamp(1rem, 2vw, 1.1rem);
-    margin-bottom: 1rem;
-    color: var(--text-gray);
-}
-
-a {
-    color: var(--accent-bright-blue);
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-a:hover {
-    color: var(--text-off-white);
-}
-
-/* Container for consistent width */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    width: 100%;
-}
-
-section {
-    padding: clamp(60px, 10vw, 100px) 0;
-    position: relative;
-    z-index: 1;
-}
-
-/* Navigation Bar */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(13, 17, 23, 0.95);
-    padding: 1rem 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px var(--shadow-dark);
-}
-
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar .logo {
-    font-family: 'Poppins', sans-serif;
-    font-size: clamp(1.5rem, 3vw, 1.8rem);
-    font-weight: 700;
-    color: var(--text-off-white);
-}
-
-.navbar .nav-links {
-    list-style: none;
-    display: flex;
-    gap: clamp(1.5rem, 3vw, 2.5rem);
-}
-
-.navbar .nav-links a {
-    color: var(--text-gray);
-    font-weight: 500;
-    position: relative;
-    padding: 0.5rem 0;
-}
-
-.navbar .nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent-bright-blue);
-    bottom: 0;
-    left: 0;
-    transition: width 0.3s ease;
-}
-
-.navbar .nav-links a:hover::after,
-.navbar .nav-links a.active::after {
-    width: 100%;
-}
-
-.navbar .nav-links a:hover,
-.navbar .nav-links a.active {
-    color: var(--accent-bright-blue);
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 1.8rem;
-    color: var(--text-off-white);
-    cursor: pointer;
-}
-
-/* Hero Section */
-#hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
-}
-
-#particles-js {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.hero-content {
-    max-width: 800px;
-    padding: 2rem;
-    background-color: rgba(13, 17, 23, 0.8);
-    border-radius: 15px;
-    box-shadow: 0 0 30px var(--shadow-dark);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.profile-image {
-    width: clamp(120px, 15vw, 150px);
-    height: clamp(120px, 15vw, 150px);
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--accent-bright-blue);
-    margin-bottom: 1.5rem;
-    box-shadow: 0 0 20px var(--shadow-light);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.profile-image:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 30px var(--shadow-light);
-}
-
-.hero-content h1 {
-    font-size: clamp(2.8rem, 6vw, 4rem);
-    color: var(--accent-bright-blue);
-}
-
-.hero-content p {
-    font-size: clamp(1.3rem, 3vw, 1.8rem);
-    color: var(--text-off-white);
-}
-
-.btn-download-cv {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.7rem;
-    padding: 0.8rem 1.8rem;
-    background-color: var(--accent-bright-blue);
-    color: var(--text-off-white);
-    border-radius: 8px;
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 5px 15px var(--shadow-dark);
-}
-
-.btn-download-cv:hover {
-    background-color: #4089e0;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px var(--shadow-light);
-}
-
-/* About Section */
-#about {
-    background-color: rgba(13, 17, 23, 0.8);
-    text-align: center;
-}
-
-#about h2 {
-    color: var(--accent-bright-blue);
-}
-
-.typing-text-container {
-    min-height: 40px;
-    margin-bottom: 1.5rem;
-}
-
-.typing-text {
-    font-size: clamp(1.3rem, 3vw, 1.8rem);
-    font-weight: 600;
-    color: var(--text-off-white);
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid var(--accent-bright-blue);
-    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-    display: inline-block;
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: var(--accent-bright-blue); }
-}
-
-/* Skills Section */
-#skills {
-    background-color: rgba(13, 17, 23, 0.8);
-    text-align: center;
-}
-
-#skills h2 {
-    color: var(--accent-bright-blue);
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 1.5rem;
-    justify-content: center;
-}
-
-.skill-item {
-    background-color: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px var(--shadow-dark);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 140px;
-}
-
-.skill-item:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 10px 20px var(--shadow-light);
-    background-color: rgba(88, 166, 255, 0.1);
-}
-
-.skill-item i {
-    font-size: clamp(2.5rem, 5vw, 3rem);
-    margin-bottom: 1rem;
-}
-
-.skill-item h3 {
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    color: var(--text-off-white);
-    word-wrap: break-word;
-    max-width: 100%;
-}
-
-/* Skill Icon Colors */
-.icon-java { color: #E03F3F; }
-.icon-springboot { color: #6DB33F; }
-.icon-springsecurity { color: #4CAF50; }
-.icon-restapi { color: var(--text-off-white); }
-.icon-jwt { color: #9B59B6; }
-.icon-mongodb { color: #47A248; }
-.icon-mysql { color: #00758F; }
-.icon-microservices { color: var(--text-off-white); }
-.icon-eureka { color: var(--text-off-white); }
-.icon-apigateway { color: var(--text-off-white); }
-.icon-git { color: #F1502F; }
-.icon-maven { color: #C71A36; }
-.icon-postman { color: #FF6C37; }
-.icon-oop { color: var(--text-off-white); }
-.icon-dsa { color: var(--text-off-white); }
-
-/* Projects Section */
-#projects {
-    background-color: var(--bg-deep-navy);
-    text-align: center;
-    padding-bottom: clamp(100px, 15vw, 150px);
-}
-
-#projects h2 {
-    color: var(--accent-bright-blue);
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    justify-content: center;
-}
-
-.project-card {
-    background-color: var(--card-bg);
-    border-radius: 12px;
-    box-shadow: 0 8px 20px var(--shadow-dark);
-    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.project-card:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 12px 25px var(--shadow-light);
-    background-color: rgba(88, 166, 255, 0.1);
-}
-
-.project-card-content {
-    padding: 1.5rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.project-card h3 {
-    color: var(--accent-bright-blue);
-    font-size: clamp(1.3rem, 2.5vw, 1.5rem);
-}
-
-.project-card .project-subtitle {
-    color: var(--text-gray);
-    font-size: clamp(0.85rem, 1.8vw, 0.95rem);
-    font-style: italic;
-}
-
-.project-card p {
-    font-size: clamp(0.9rem, 2vw, 1rem);
-    flex-grow: 1;
-}
-
-.project-card .tech-stack {
-    font-size: clamp(0.85rem, 1.8vw, 0.95rem);
-    color: var(--text-off-white);
-    font-weight: 500;
-}
-
-.project-card .tech-stack span {
-    color: var(--accent-bright-blue);
-    font-weight: 600;
-}
-
-.project-card .github-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.7rem 1.2rem;
-    background-color: var(--accent-bright-blue);
-    color: var(--text-off-white);
-    border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    align-self: flex-start;
-}
-
-.project-card .github-link:hover {
-    background-color: #4089e0;
-    transform: translateY(-2px);
-}
-
-/* Education Section */
-#education {
-    background-color: rgba(13, 17, 23, 0.8);
-    text-align: center;
-    margin-top: clamp(30px, 5vw, 50px);
-}
-
-#education h2 {
-    color: var(--accent-bright-blue);
-}
-
-.education-item {
-    background-color: var(--card-bg);
-    padding: 1.8rem;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px var(--shadow-dark);
-    max-width: 700px;
-    margin: 1rem auto;
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.education-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px var(--shadow-light);
-}
-
-/* Contact Section */
-#contact {
-    background-color: var(--bg-deep-navy);
-    padding: clamp(20px, 8vw, 20px) 0;
-    text-align: center;
-    border-top: 1px solid var(--border-color);
-}
-
-#contact h2 {
-    color: var(--accent-bright-blue);
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: clamp(1.5rem, 3vw, 2rem);
-    margin-top: 2rem;
-}
-
-.social-links a {
-    font-size: clamp(2rem, 4vw, 2.5rem);
-    color: var(--text-gray);
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--accent-bright-blue);
-    transform: scale(1.3);
-}
-
-.footer-text {
-    margin-top: 2rem;
-    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
-    color: var(--text-gray);
-}
-
-/* Mobile Menu */
-@media (max-width: 768px) {
-    .navbar .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--bg-deep-navy);
-        box-shadow: 0 5px 10px var(--shadow-dark);
-        padding: 1rem 0;
-        text-align: center;
-        gap: 1rem;
-    }
-
-    .navbar .nav-links.active {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-    .hero-content {
-        max-width: 600px;
-        padding: 1.5rem;
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    }
-
-    .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-}
-
-@media (max-width: 768px) {
-    section {
-        padding: clamp(50px, 8vw, 80px) 0;
-    }
-
-    .hero-content {
-        max-width: 90%;
-        padding: 1.2rem;
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 1rem;
-    }
-
-    .skill-item {
-        min-height: 120px;
-        padding: 1rem;
-    }
-
-    .skill-item i {
-        font-size: clamp(2rem, 4vw, 2.5rem);
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .project-card {
-        max-width: 400px;
-        margin: 0 auto;
-    }
-
-    #projects {
-        padding-bottom: clamp(80px, 12vw, 100px);
-    }
-
-    #education {
-        margin-top: clamp(20px, 4vw, 30px);
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-content {
-        padding: 1rem;
-    }
-
-    .profile-image {
-        width: clamp(100px, 12vw, 120px);
-        height: clamp(100px, 12vw, 120px);
-    }
-
-    .btn-download-cv {
-        padding: 0.6rem 1.2rem;
-        font-size: clamp(0.8rem, 1.8vw, 0.9rem);
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-    }
-
-    .skill-item {
-        min-height: 100px;
-        padding: 0.8rem;
-    }
-
-    .skill-item h3 {
-        font-size: clamp(0.9rem, 1.8vw, 1rem);
-    }
-
-    .project-card-content {
-        padding: 1rem;
-    }
-
-    .project-card .github-link {
-        padding: 0.5rem 1rem;
-        font-size: clamp(0.8rem, 1.8vw, 0.9rem);
-    }
-
-    .social-links a {
-        font-size: clamp(1.8rem, 3.5vw, 2rem);
-    }
-}
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 </head>
+
 <body>
-    <!-- Particles.js Library -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <!-- AOS Library for scroll animations -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <!-- Global Particles Container -->
-    <div id="particles-js"></div>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">Abdur Rehman</div>
-            <ul class="nav-links">
-                <li><a href="#hero" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Abdur Rehman</a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#education" class="nav-link">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
             </ul>
-            <div class="menu-toggle" id="mobile-menu">
-                <i class="fas fa-bars"></i>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero">
-        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-            <img src="profile pic.jpg" alt="Abdur Rehman" class="profile-image">
-            <h1>Abdur Rehman</h1>
-            <p>Java Backend Developer</p>
-            <a href="cv.pdf" download="Abdur_Rehman_CV.pdf" class="btn-download-cv">
-                <i class="fas fa-download"></i> Download CV
+    <section id="home" class="hero">
+        <div class="particles-container" id="particles-js"></div>
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">Abdur Rehman</span>
+                </h1>
+                <p class="hero-subtitle">Java Backend Developer</p>
+                <p class="hero-description">
+                    Passionate about building scalable and secure APIs with Java and Spring Boot
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="/cv.pdf" target="_blank" class="btn btn-secondary">View CV</a>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
+                <div class="image-container">
+                    <img src="profile pic.jpg" alt="Abdur Rehman" loading="lazy">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#about" class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
             </a>
         </div>
     </section>
 
-    <!-- About Me Section -->
-    <section id="about" class="container">
-        <h2 data-aos="fade-right" data-aos-duration="1000">About Me</h2>
-        <div class="typing-text-container" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-            <span class="typing-text">Java Backend Developer | Spring Boot | REST APIs | MongoDB | Microservices</span>
-        </div>
-        <p data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
-            I’m a backend-focused Software Engineer with hands-on experience in building scalable and secure APIs using Java and Spring Boot. I enjoy solving real-world problems, designing clean system architectures, and working with microservices and authentication systems. My code is clean, efficient, and built to scale.
-        </p>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="container">
-        <h2 data-aos="fade-left" data-aos-duration="1000">Skills</h2>
-        <div class="skills-grid">
-            <!-- Skill Item: Java -->
-            <div class="skill-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
-                <i class="fab fa-java icon-java"></i>
-                <h3>Java</h3>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know me better</p>
             </div>
-            <!-- Skill Item: Spring Boot -->
-            <div class="skill-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
-                <i class="fas fa-leaf icon-springboot"></i>
-                <h3>Spring Boot</h3>
-            </div>
-            <!-- Skill Item: Spring Security -->
-            <div class="skill-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
-                <i class="fas fa-shield-alt icon-springsecurity"></i>
-                <h3>Spring Security</h3>
-            </div>
-            <!-- Skill Item: REST APIs -->
-            <div class="skill-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">
-                <i class="fas fa-cogs icon-restapi"></i>
-                <h3>REST APIs</h3>
-            </div>
-            <!-- Skill Item: JWT -->
-            <div class="skill-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="500">
-                <i class="fas fa-key icon-jwt"></i>
-                <h3>JWT</h3>
-            </div>
-            <!-- Skill Item: MongoDB -->
-            <div class="skill-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="600">
-                <i class="fas fa-database icon-mongodb"></i>
-                <h3>MongoDB</h3>
-            </div>
-            <!-- Skill Item: MySQL -->
-            <div class="skill-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="700">
-                <i class="fas fa-database icon-mysql"></i>
-                <h3>MySQL</h3>
-            </div>
-            <!-- Skill Item: Microservices -->
-            <div class="skill-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="800">
-                <i class="fas fa-cloud icon-microservices"></i>
-                <h3>Microservices</h3>
-            </div>
-            <!-- Skill Item: Eureka -->
-            <div class="skill-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="1000">
-                <i class="fas fa-compass icon-eureka"></i>
-                <h3>Eureka</h3>
-            </div>
-            <!-- Skill Item: API Gateway -->
-            <div class="skill-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="1100">
-                <i class="fas fa-sitemap icon-apigateway"></i>
-                <h3>API Gateway</h3>
-            </div>
-            <!-- Skill Item: Git -->
-            <div class="skill-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="1200">
-                <i class="fab fa-git-alt icon-git"></i>
-                <h3>Git</h3>
-            </div>
-            <!-- Skill Item: Maven -->
-            <div class="skill-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="1300">
-                <i class="fas fa-box-open icon-maven"></i>
-                <h3>Maven</h3>
-            </div>
-            <!-- Skill Item: Postman -->
-            <div class="skill-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="1400">
-                <i class="fas fa-paper-plane icon-postman"></i>
-                <h3>Postman</h3>
-            </div>
-            <!-- Skill Item: OOP -->
-            <div class="skill-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="1500">
-                <i class="fas fa-object-group icon-oop"></i>
-                <h3>OOP</h3>
-            </div>
-            <!-- Skill Item: DSA -->
-            <div class="skill-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="1600">
-                <i class="fas fa-code-branch icon-dsa"></i>
-                <h3>DSA</h3>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="container">
-        <h2 data-aos="fade-right" data-aos-duration="1000">Projects</h2>
-        <div class="projects-grid">
-            <!-- Project 1 -->
-            <div class="project-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                <div class="project-card-content">
-                    <h3>ManiLogix – Microservices Supply Chain System</h3>
-                    <p>A comprehensive microservices-based supply chain system with centralized authentication and various service modules.</p>
-                    <div class="tech-stack"><span>Stack:</span> Spring Boot, Spring Cloud, JWT, MongoDB, Eureka, API Gateway</div>
-                    <ul>
-                        <li>Centralized JWT Auth</li>
-                        <li>Supplier, Inventory, Order Services</li>
-                        <li>Notification Service (Email)</li>
-                        <li>Inter-service REST and Feign</li>
-                        <li>Service Discovery & Load Balancing</li>
-                    </ul>
-                    <a href="https://github.com/rehman4113/Mani-Logix-B2B" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub Repo</a>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <h3>I'm a Java Backend Developer</h3>
+                    <p>
+                        With a passion for building robust backend systems, I specialize in creating scalable and secure
+                        APIs
+                        using Java and Spring Boot. I enjoy solving complex problems and designing clean, efficient
+                        system architectures.
+                    </p>
+                    <p>
+                        When I'm not coding, I love exploring new technologies, contributing to open-source projects,
+                        and
+                        sharing knowledge with the developer community.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h4>5+</h4>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat">
+                            <h4>1+</h4>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat">
+                            <h4>100%</h4>
+                            <p>Client Satisfaction</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                <div class="project-card-content">
-                    <h3>Voice-Controlled Task Manager</h3>
-                    <p>Spring Boot backend integrated with Dialogflow AI for voice/text-controlled task management.</p>
-                    <div class="tech-stack"><span>Stack:</span> Spring Boot, Dialogflow AI, REST APIs</div>
-                    <ul>
-                        <li>Voice and text input for task creation</li>
-                        <li>CRUD APIs for managing tasks</li>
-                        <li>Seamless AI integration for natural language processing</li>
-                    </ul>
-                    <a href="https://github.com/rehman4113/AI-Powered-Task-Manager" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub Repo</a>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                <div class="project-card-content">
-                    <h3>2FA Login System</h3>
-                    <p>A secure login system implementing Two-Factor Authentication (2FA) with OTP via email/SMS.</p>
-                    <div class="tech-stack"><span>Stack:</span> Spring Boot, JWT, Spring Security, OTP (Email/SMS)</div>
-                    <ul>
-                        <li>JWT-secured backend for API authentication</li>
-                        <li>OTP generation and verification via email/SMS</li>
-                        <li>Robust Spring Security with role-based access control</li>
-                    </ul>
-                    <a href="https://github.com/rehman4113/Two-Factor-Authentication-System" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub Repo</a>
-                </div>
-            </div>
-
-            <!-- Project 4: Updated FlavorFit -->
-            <div class="project-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                <div class="project-card-content">
-                    <h3>FlavorFit – Intelligent Meal Planning & Delivery System <br>(Final Year Project)</h3>
-                    <p class="project-subtitle">Full-stack microservices project built using Spring Boot, MongoDB, JWT, and role-based access control.</p>
-                    <div class="tech-stack"><span>Stack:</span> MongoDB, Spring Boot, JWT</div>
-                    <ul>
-                        <li>MongoDB for flexible data storage</li>
-                        <li>Nutritionist-curated meal suggestions</li>
-                        <li>Secure ordering process with user roles and authentication</li>
-                    </ul>
+                <div class="about-image" data-aos="fade-left">
+                    <div class="image-wrapper">
+                        <img src="about pic 1.jpg" alt="About Abdur Rehman" loading="lazy">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="container">
-        <h2 data-aos="fade-left" data-aos-duration="1000">Education</h2>
-        <div class="education-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-            <h3>BS Software Engineering</h3>
-            <p>International Islamic University Islamabad (2021–2025)</p>
+    <section id="education" class="education">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Education</h2>
+                <p class="section-subtitle">My academic background</p>
+            </div>
+            <div class="education-container">
+                <div class="education-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="education-degree">BS Software Engineering</h3>
+                    <h4 class="education-university">International Islamic University Islamabad</h4>
+                    <div class="education-duration">2021 - 2025</div>
+                    <p class="education-description">
+                        Pursuing Bachelor's degree in Software Engineering with focus on web development,
+                        algorithms, and software design patterns.
+                    </p>
+                    <div class="education-subjects">
+                        <span class="subject-tag">Data Structures & Algorithms</span>
+                        <span class="subject-tag">Software Design Patterns</span>
+                        <span class="subject-tag">Web Development</span>
+                        <span class="subject-tag">Database Management</span>
+                        <span class="subject-tag">Problem Solving</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <p class="section-subtitle">Technologies I work with</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Backend Development</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fab fa-java"></i>
+                            <span>Java</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-leaf"></i>
+                            <span>Spring Boot</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Spring Security</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-cogs"></i>
+                            <span>REST APIs</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-key"></i>
+                            <span>JWT</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-cloud"></i>
+                            <span>Microservices</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-compass"></i>
+                            <span>Eureka</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-sitemap"></i>
+                            <span>API Gateway</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Tools & Others</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-box-open"></i>
+                            <span>Maven</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Postman</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-object-group"></i>
+                            <span>OOP</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code-branch"></i>
+                            <span>DSA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Some of my recent work</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="assets/project1.jpg" alt="ManiLogix – Microservices Supply Chain System"
+                            loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/rehman4113/Mani-Logix-B2B" class="project-link"
+                                    aria-label="View Code" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>ManiLogix – Microservices Supply Chain System</h3>
+                        <p>A comprehensive microservices-based supply chain system with centralized authentication and
+                            various
+                            service modules.</p>
+                        <div class="tech-stack"><span>Stack:</span> Spring Boot, Spring Cloud, JWT, MongoDB, Eureka, API
+                            Gateway
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="/project images/task.jpg" alt="Voice-Controlled Task Manager" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/rehman4113/AI-Powered-Task-Manager" class="project-link"
+                                    aria-label="View Code" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Voice-Controlled Task Manager</h3>
+                        <p>Spring Boot backend integrated with Dialogflow AI for voice/text-controlled task management.
+                        </p>
+                        <div class="tech-stack"><span>Stack:</span> Spring Boot, Dialogflow AI, REST APIs</div>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image">
+                        <img src="/project images/2FAUTH.jpg" alt="2FA Login System" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/rehman4113/Two-Factor-Authentication-System"
+                                    class="project-link" aria-label="View Code" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>2FA Login System</h3>
+                        <p>A secure login system implementing Two-Factor Authentication (2FA) with OTP via email/SMS.
+                        </p>
+                        <div class="tech-stack"><span>Stack:</span> Spring Boot, JWT, Spring Security, OTP (Email/SMS)
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-image">
+                        <img src="/project images/flavor.png"
+                            alt="FlavorFit – Intelligent Meal Planning & Delivery System" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>FlavorFit – Intelligent Meal Planning & Delivery System <br>(Final Year Project)</h3>
+                        <p class="project-subtitle">Full-stack microservices project built using Spring Boot, MongoDB,
+                            JWT,
+                            and role-based access control.</p>
+                        <div class="tech-stack"><span>Stack:</span> MongoDB, Spring Boot, JWT</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact / Social Section (Footer) -->
     <footer id="contact">
         <div class="container">
-            <h2 data-aos="fade-up" data-aos-duration="1000">Get In Touch</h2>
-            <div class="social-links" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                <a href="https://wa.me/923130584113" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="mailto:qazi912732@gmail.com" target="_blank" aria-label="Gmail"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/abdur-rehman-18927b256/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/rehman4113" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's work together</p>
             </div>
-            <p class="footer-text" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">&copy; 2025 Abdur Rehman. All rights reserved.</p>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Let's talk about your project</h3>
+                    <p>
+                        I'm always interested in new opportunities and fascinating projects.
+                        Whether you have a question or just want to say hi, feel free to reach out!
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>qazi912732@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+92 313 0584113</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Islamabad, Pakistan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" data-aos="fade-left">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" required>
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // Initialize AOS (Animate On Scroll) library
-        AOS.init({
-            once: true, // Whether animation should happen only once - while scrolling down
-            mirror: false, // Whether elements should animate out while scrolling past them
-            duration: 1000, // values from 0 to 3000, with step 50ms
-            easing: 'ease-out-cubic', // default easing for AOS animations
-        });
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/abdur-rehman-18927b256/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/rehman4113" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://twitter.com/rehman_abdur" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/rehman_abdur/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <div class="footer-content">
+                <p>&copy; 2025 Abdur Rehman. All rights reserved.</p>
+                <p>Made with <i class="fas fa-heart"></i> and lots of coffee</p>
+            </div>
+        </div>
+    </footer>
 
-        // Particles.js configuration
-        particlesJS('particles-js', {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#58A6FF" // Accent blue for particles
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#C9D1D9", // Gray for lines
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 3,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true
-        });
-
-        // Smooth scrolling for navigation links and active link highlighting
-        document.addEventListener('DOMContentLoaded', () => {
-            const navLinks = document.querySelectorAll('.nav-links a');
-            const sections = document.querySelectorAll('section');
-            const navbar = document.querySelector('.navbar');
-            const menuToggle = document.getElementById('mobile-menu');
-            const navMenu = document.querySelector('.nav-links');
-
-            // Toggle mobile menu
-            menuToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-            });
-
-            // Close mobile menu when a link is clicked
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navMenu.classList.contains('active')) {
-                        navMenu.classList.remove('active');
-                    }
-                });
-            });
-
-            // Smooth scroll
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetSection = document.getElementById(targetId);
-                    if (targetSection) {
-                        window.scrollTo({
-                            top: targetSection.offsetTop - navbar.offsetHeight, // Adjust for fixed navbar height
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-
-            // Intersection Observer for active link highlighting
-            const observerOptions = {
-                root: null,
-                rootMargin: `-${navbar.offsetHeight}px 0px 0px 0px`, // Offset by navbar height
-                threshold: 0.5 // Adjust as needed
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        navLinks.forEach(link => {
-                            link.classList.remove('active');
-                            if (link.getAttribute('href').substring(1) === entry.target.id) {
-                                link.classList.add('active');
-                            }
-                        });
-                    }
-                });
-            }, observerOptions);
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

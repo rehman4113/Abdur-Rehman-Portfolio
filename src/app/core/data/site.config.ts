@@ -7,7 +7,7 @@ export const siteConfig = {
   githubUrl: 'https://github.com/rehman4113',
   linkedinUrl: 'https://linkedin.com/in/abdur-rehman-18927b256',
   location: 'Islamabad, Pakistan',
-  cvUrl: '/cv.pdf',
+  cvUrl: 'assets/cv.pdf',
 } as const;
 
 export const profileSummary = `Backend Developer with hands-on Spring Boot and microservices experience since May 2025, including independently built projects covering service discovery, API gateways, and fault-tolerant distributed systems. Currently a Backend Developer at Litgrey Technology, where I progressed from building individual APIs to leading bug-resolution efforts and now independently own backend delivery for an Optician Business SaaS platform. Comfortable owning features end-to-end — from API design through delivery to frontend integration.`;

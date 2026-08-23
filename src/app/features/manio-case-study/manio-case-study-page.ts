@@ -59,7 +59,7 @@ const manioProject = projectsData.find(p => p.id === 'manio')!;
 
             <div class="relative" scrollReveal [delay]="200">
               <div class="aspect-video rounded-2xl overflow-hidden border border-dark-800 bg-dark-950 shadow-2xl">
-                <ui-image-slot [src]="'/assets/manio-dashboard.png'" [alt]="'Manio Dashboard Screenshot'" aspectRatio="16:10" radius="xl" [loading]="'lazy'" placeholderText="Dashboard screenshot — coming soon" />
+                <ui-image-slot [src]="'assets/manio-dashboard.png'" [alt]="'Manio Dashboard Screenshot'" aspectRatio="16:10" radius="xl" [loading]="'lazy'" placeholderText="Dashboard screenshot — coming soon" />
               </div>
             </div>
           </div>
@@ -326,9 +326,9 @@ export class ManioCaseStudyPageComponent implements OnInit {
     { title: 'Reports & Export', description: 'CSV export with filters, category-wise analysis, tax-ready summaries. Supports English/Urdu (RTL).', details: ['CSV export', 'Date range filters', 'Category breakdown'] },
   ];
   protected manioScreenshots: Array<{ label: string; alt: string; src: string; placeholder: string; aspectRatio: '16:10' | '9:16' }> = [
-    { label: 'Dashboard Overview', alt: 'Manio dashboard showing wallets, budgets, and trends', src: '/assets/manio-dashboard.png', placeholder: 'Dashboard screenshot — coming soon', aspectRatio: '16:10' },
-    { label: 'WhatsApp Conversation', alt: 'WhatsApp chat showing natural language transaction entry', src: '/assets/manio-whatsapp-conversation.png', placeholder: 'WhatsApp conversation screenshot — coming soon', aspectRatio: '16:10' },
-    { label: 'Mobile View', alt: 'Manio mobile responsive layout', src: '/assets/manio-mobile-view.png', placeholder: 'Mobile view screenshot — coming soon', aspectRatio: '9:16' },
+    { label: 'Dashboard Overview', alt: 'Manio dashboard showing wallets, budgets, and trends', src: 'assets/manio-dashboard.png', placeholder: 'Dashboard screenshot — coming soon', aspectRatio: '16:10' },
+    { label: 'WhatsApp Conversation', alt: 'WhatsApp chat showing natural language transaction entry', src: 'assets/manio-whatsapp-conversation.png', placeholder: 'WhatsApp conversation screenshot — coming soon', aspectRatio: '16:10' },
+    { label: 'Mobile View', alt: 'Manio mobile responsive layout', src: 'assets/manio-mobile-view.png', placeholder: 'Mobile view screenshot — coming soon', aspectRatio: '9:16' },
   ];
 
   protected lightboxOpen = signal(false);

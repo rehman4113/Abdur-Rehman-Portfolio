@@ -66,7 +66,7 @@ export const projectsData: Project[] = [
     id: 'ai-task-manager',
     title: 'AI-Powered Task Manager',
     description: 'Full-stack task manager where a Node.js NLP layer interprets natural-language commands and forwards structured intents to a Spring Boot backend exposing RESTful task APIs, with a responsive frontend UI.',
-    image: '/assets/task.jpg',
+    image: 'assets/task.jpg',
     githubUrl: 'https://github.com/rehman4113/AI-Powered-Task-Manager',
     liveUrl: undefined,
     techStack: [
@@ -87,7 +87,7 @@ export const projectsData: Project[] = [
     id: '2fa-system',
     title: 'Two-Factor Authentication System',
     description: 'First independent backend project. Secure 2FA login flow with OTP verification, role-based access, and token management to protect sensitive endpoints.',
-    image: '/assets/2FAUTH.jpg',
+    image: 'assets/2FAUTH.jpg',
     githubUrl: 'https://github.com/rehman4113/Two-Factor-Authentication-System',
     liveUrl: undefined,
     techStack: [
@@ -104,7 +104,7 @@ export const projectsData: Project[] = [
     id: 'flavorfit',
     title: 'FlavorFit — Meal Ordering App',
     description: 'Backend for a meal ordering platform with JWT-secured, role-based APIs managing users, orders, and nutritionist recommendations. University Final Year Project.',
-    image: '/assets/flavor.png',
+    image: 'assets/flavor.png',
     githubUrl: undefined, // Private repo
     liveUrl: undefined,
     techStack: [

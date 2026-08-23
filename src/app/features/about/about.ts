@@ -83,7 +83,7 @@ const stats = [
 })
 export class AboutComponent {
   protected siteConfig = siteConfig;
-  protected aboutImage = '/assets/about pic 1.jpg';
+  protected aboutImage = 'assets/about pic 1.jpg';
   protected stats = stats;
   protected Code = Code;
   protected Award = Award;

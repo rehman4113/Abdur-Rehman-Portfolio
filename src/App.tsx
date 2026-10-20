@@ -68,5 +68,10 @@ function CaseStudy() {
 export default function App() {
   useReveal();
   const caseStudy = window.location.pathname.replace(/\/$/,'').endsWith('/work/manio');
+  useEffect(() => {
+    if (caseStudy || !window.location.hash) return;
+    const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+    if (target) requestAnimationFrame(() => target.scrollIntoView({ behavior: 'instant' }));
+  }, [caseStudy]);
   return <><a className="skip-link" href="#main-content">Skip to content</a><Header caseStudy={caseStudy} onBack={() => { window.location.href=import.meta.env.BASE_URL+'#work'; }}/>{caseStudy ? <CaseStudy/> : <Home/>}<footer className="footer"><div className="shell footer-inner"><a href={import.meta.env.BASE_URL} className="brand-mark">AR<span>.</span></a><p>© {new Date().getFullYear()} Abdur Rehman. Built with intent.</p><div><a href={siteConfig.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github size={20}/></a><a href={siteConfig.linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={20}/></a><a href={`mailto:${siteConfig.email}`} aria-label="Email"><Mail size={20}/></a></div></div></footer></>;
 }

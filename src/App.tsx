@@ -36,7 +36,7 @@ function Header({ caseStudy, onBack }: { caseStudy: boolean; onBack: () => void 
   const links = [['Work', '#work'], ['Experience', '#experience'], ['Expertise', '#expertise'], ['About', '#about'], ['Contact', '#contact']];
   return <header className="site-header"><div className="shell header-inner">
     <a className="brand" href={caseStudy ? '#' : '#top'} onClick={caseStudy ? e => { e.preventDefault(); onBack(); } : undefined} aria-label="Abdur Rehman, home"><span className="brand-mark">AR<span>.</span></span><span className="brand-name">ABDUR REHMAN <small>BACKEND DEVELOPER</small></span></a>
-    <nav className={open ? 'nav open' : 'nav'} aria-label="Main navigation">{links.map(([label, href]) => <a key={href} href={caseStudy ? `./${href}` : href} onClick={() => { setOpen(false); if(caseStudy) onBack(); }}>{label}</a>)}</nav>
+    <nav className={open ? 'nav open' : 'nav'} aria-label="Main navigation">{links.map(([label, href]) => <a key={href} href={caseStudy ? `${import.meta.env.BASE_URL}${href}` : href} onClick={() => setOpen(false)}>{label}</a>)}</nav>
     <a className="header-cta" href={`mailto:${siteConfig.email}`}>Let's talk <ArrowUpRight size={16}/></a>
     <button className="menu-toggle" type="button" onClick={() => setOpen(!open)} aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open}>{open ? <X/> : <Menu/>}</button>
   </div></header>;

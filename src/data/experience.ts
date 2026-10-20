@@ -1,6 +1,5 @@
-import { Experience } from '../models';
 
-export const experienceData: Experience = {
+export const experienceData = {
   company: 'Litgrey Technology',
   location: 'Islamabad, Pakistan',
   type: 'Hybrid',

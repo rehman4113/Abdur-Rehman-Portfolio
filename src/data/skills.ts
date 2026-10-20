@@ -1,6 +1,5 @@
-import { SkillGroup } from '../models';
 
-export const skillsData: SkillGroup[] = [
+export const skillsData = [
   {
     category: 'Languages',
     skills: [

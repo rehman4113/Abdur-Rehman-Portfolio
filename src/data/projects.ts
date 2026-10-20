@@ -1,6 +1,5 @@
-import { Project } from '../models';
 
-export const projectsData: Project[] = [
+export const projectsData = [
   {
     id: 'manio',
     title: 'Manio — Personal Finance Tracker',

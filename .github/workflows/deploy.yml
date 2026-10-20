@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -19,6 +19,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Convert profile image to WebP
+        if: ${{ !contains(github.event.head_commit.message, '[skip image conversion]') }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y webp
+          cwebp -q 82 -resize 960 0 "public/assets/about pic 1.jpg" -o public/assets/profile.webp
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/assets/profile.webp
+          git commit -m "Add optimized profile WebP [skip image conversion]"
+          git push
       - uses: actions/setup-node@v4
         with:
           node-version: '24'

@@ -19,7 +19,7 @@ export const projectsData = [
 - React + TypeScript frontend with light/dark theming and reduced-motion support
 
 **Features**: Multi-wallet (system CASH wallet), transactions (income/expense/transfer/loan with splits), budgets (per-category monthly limits with NORMAL/WARNING/EXCEEDED alerts), loans (receivable/payable per person), dashboard (6-month trends), reports (CSV export, category breakdowns), in-app + email notifications, bilingual (English/Urdu, RTL).`,
-    image: 'assets/manio-overview.png',
+    image: 'assets/manio-overview.webp',
     githubUrl: undefined, // Private repo - no GitHub link
     liveUrl: 'https://personal-finance-tracker-mani-df8a.vercel.app/preview',
     techStack: [
@@ -45,7 +45,7 @@ export const projectsData = [
     id: 'manilogix',
     title: 'ManiLogix — Microservices Supply Chain System',
     description: 'Enterprise-style backend for inventory, suppliers, and orders across independent services with JWT-secured auth, role-based access, and unified routing via API Gateway with Eureka service discovery.',
-    image: 'assets/manilogix-overview.jpg',
+    image: 'assets/manilogix-overview.webp',
     githubUrl: 'https://github.com/rehman4113/Mani-Logix-B2B',
     liveUrl: 'https://manilogix-ui.vercel.app/',
     techStack: [
@@ -69,7 +69,7 @@ export const projectsData = [
     id: 'ai-task-manager',
     title: 'AI-Powered Task Manager',
     description: 'Full-stack task manager where a Node.js NLP layer interprets natural-language commands and forwards structured intents to a Spring Boot backend exposing RESTful task APIs, with a responsive frontend UI.',
-    image: 'assets/task.jpg',
+    image: 'assets/task.webp',
     githubUrl: 'https://github.com/rehman4113/AI-Powered-Task-Manager',
     liveUrl: undefined,
     techStack: [
@@ -90,7 +90,7 @@ export const projectsData = [
     id: '2fa-system',
     title: 'Two-Factor Authentication System',
     description: 'First independent backend project. Secure 2FA login flow with OTP verification, role-based access, and token management to protect sensitive endpoints.',
-    image: 'assets/2FAUTH.jpg',
+    image: 'assets/2FAUTH.webp',
     githubUrl: 'https://github.com/rehman4113/Two-Factor-Authentication-System',
     liveUrl: undefined,
     techStack: [
@@ -107,7 +107,7 @@ export const projectsData = [
     id: 'flavorfit',
     title: 'FlavorFit — Meal Ordering App',
     description: 'Backend for a meal ordering platform with JWT-secured, role-based APIs managing users, orders, and nutritionist recommendations. University Final Year Project.',
-    image: 'assets/flavor.png',
+    image: 'assets/flavor.webp',
     githubUrl: undefined, // Private repo
     liveUrl: undefined,
     techStack: [

@@ -4,7 +4,7 @@ export const projectsData = [
     id: 'manio',
     title: 'Manio — Personal Finance Tracker',
     description: 'Full-stack personal finance tracker with multi-wallet transactions, budgets, loan tracking, and AI-powered WhatsApp automation for conversational finance management.',
-    longDescription: `Manio is a full-stack personal finance tracker built with Angular and Spring Boot, enhanced with Spring AI + WhatsApp automation for conversational finance management. Users can text "spent 500 on groceries" on WhatsApp and it parses, confirms, and records the transaction automatically.
+    longDescription: `Manio is a full-stack personal finance tracker built with React, TypeScript and Spring Boot, enhanced with Spring AI + WhatsApp automation for conversational finance management. Users can text "spent 500 on groceries" on WhatsApp and it parses, confirms, and records the transaction automatically.
 
 **Architecture**: Modular monolith using Spring Modulith with three modules (auth, finance, notification). PostgreSQL with Flyway migrations for schema management.
 
@@ -16,14 +16,16 @@ export const projectsData = [
 - Spring Modulith for modularity without microservices complexity
 - JSON-mode workaround for NVIDIA NIM schema limitations
 - Outbox pattern for reliable WhatsApp message delivery
-- Signals-first Angular frontend (no NgRx)
+- React + TypeScript frontend with light/dark theming and reduced-motion support
 
 **Features**: Multi-wallet (system CASH wallet), transactions (income/expense/transfer/loan with splits), budgets (per-category monthly limits with NORMAL/WARNING/EXCEEDED alerts), loans (receivable/payable per person), dashboard (6-month trends), reports (CSV export, category breakdowns), in-app + email notifications, bilingual (English/Urdu, RTL).`,
-    image: '', // Will be provided separately
+    image: 'assets/manio-react-overview.svg',
     githubUrl: undefined, // Private repo - no GitHub link
-    liveUrl: 'https://personal-finance-tracker-aot.pages.dev/',
+    liveUrl: 'https://personal-finance-tracker-mani-df8a.vercel.app/preview',
     techStack: [
-      'Angular 18+',
+      'React 19',
+      'TypeScript',
+      'Vite',
       'Spring Boot 4.0.7',
       'Java 21',
       'PostgreSQL',
@@ -32,8 +34,7 @@ export const projectsData = [
       'Spring Security + JWT',
       'Spring AI',
       'NVIDIA NIM',
-      'Chart.js',
-      'Bootstrap 5',
+      'CSS design system',
     ],
     category: 'flagship',
     featured: true,
@@ -44,10 +45,13 @@ export const projectsData = [
     id: 'manilogix',
     title: 'ManiLogix — Microservices Supply Chain System',
     description: 'Enterprise-style backend for inventory, suppliers, and orders across independent services with JWT-secured auth, role-based access, and unified routing via API Gateway with Eureka service discovery.',
-    image: '', // No image available
+    image: 'assets/manilogix-overview.svg',
     githubUrl: 'https://github.com/rehman4113/Mani-Logix-B2B',
-    liveUrl: undefined,
+    liveUrl: 'https://manilogix-ui.vercel.app/',
     techStack: [
+      'React 19',
+      'TypeScript',
+      'Vite',
       'Spring Boot',
       'Spring Cloud',
       'Eureka',

@@ -19,7 +19,7 @@ export const projectsData = [
 - React + TypeScript frontend with light/dark theming and reduced-motion support
 
 **Features**: Multi-wallet (system CASH wallet), transactions (income/expense/transfer/loan with splits), budgets (per-category monthly limits with NORMAL/WARNING/EXCEEDED alerts), loans (receivable/payable per person), dashboard (6-month trends), reports (CSV export, category breakdowns), in-app + email notifications, bilingual (English/Urdu, RTL).`,
-    image: 'assets/manio-overview.jpg',
+    image: 'assets/manio-overview.png',
     githubUrl: undefined, // Private repo - no GitHub link
     liveUrl: 'https://personal-finance-tracker-mani-df8a.vercel.app/preview',
     techStack: [
